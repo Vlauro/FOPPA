@@ -1,0 +1,1776 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2/"
+     xml:base="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2">
+        <rdfs:comment xml:lang="en">The FOPPA ontology is a comprehensive framework designed to standardize and enhance the photogrammetric documentation of archaeological artifacts. It is meticulously structured into classes and properties that encapsulate the various phases of the photogrammetric process, from initial data acquisition to final export. The ontology is deeply integrated with the CIDOC CRM and CIDOC-CRMsci standards, ensuring a consistent and interoperable approach to cultural heritage documentation.
+
+Version 4_2 of the FOPPA ontology is now considered obsolete and will be maintained solely for archival purposes. This version, FOPPA 4_2, continues the development of the BeA-PG protocol, of which it is an evolution.
+
+At the heart of the FOPPA ontology are four main phases: Acquisition, Processing, Modeling, and Exporting. Each phase is further divided into sub-phases, each represented by specific classes and properties. For instance, the Acquisition phase includes classes such as Raw Data Metadata, while the Processing phase encompasses classes like Point Cloud Processing and Densified Point Cloud. These classes are designed to capture detailed metadata about the photogrammetric process, including the software used, algorithms applied, and quality of the output.
+
+The ontology also includes classes for the Modeling phase, such as Mesh Reconstruction and Mesh Texturing, which document the creation and refinement of 3D models. The final phase, Exporting, includes classes that record the preparation and dissemination of the final model, whether it be for 3D printing, video presentation, or interactive exhibition.
+
+The FOPPA ontology serves multiple purposes: it provides a standardized approach to photogrammetric documentation, ensures high-quality data capture and processing, and facilitates the interoperability of data within the broader context of cultural heritage research. By adhering to international standards and incorporating detailed procedural guidelines from the FOPPA manual, the ontology supports accurate and reliable digital preservation of archaeological artifacts.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#Dig:_L10_had_input -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#Dig:_L10_had_input">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P16_used_specific_object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_acquisition_influenced_by_scaleORgeometry -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_acquisition_influenced_by_scaleORgeometry">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P15_was_influenced_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Acquisition_Trajectory"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_acquisition_instruction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_acquisition_instruction">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P33__used__specific_technique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Acquisition_Phase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_instruction_for_densification -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_instruction_for_densification">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_processing_instruction"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Densification"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Densification_SubPhase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_instruction_for_export_and_archiving -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_instruction_for_export_and_archiving">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P33__used__specific_technique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Export_and_Archiving"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Export_and_Archiving_Phase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_instruction_for_mesh_recontruction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_instruction_for_mesh_recontruction">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_modelling_instruction"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Mesh_Reconst."/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Mesh_Reconstruction_SubPhase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_instruction_for_texturing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_instruction_for_texturing">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_modelling_instruction"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Processing_of_Textured_Mesh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Mesh_Texturing_SubPhase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_modelling_instruction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_modelling_instruction">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P33__used__specific_technique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Modelling_Phase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_processing_instruction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_follows_processing_instruction">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P33__used__specific_technique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Processing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Processing_Phase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Densified_Point_Cloud -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Densified_Point_Cloud">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#Dig:_L10_had_input"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Mesh_Reconst."/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Densified_Point_Cloud"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Mesh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Mesh">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#Dig:_L10_had_input"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Processing_of_Textured_Mesh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:RawDataFile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_3D_Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Modelled_Texturized_Mesh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Modelled_Texturized_Mesh">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#Dig:_L10_had_input"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling_Software"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelled_3D_Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Point_Cloud -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Point_Cloud">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#Dig:_L10_had_input"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Densification"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Point_Cloud"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Raw_Data -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Raw_Data">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#Dig:_L10_had_input"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_software__for_processing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:RawDataFile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Texturized_Mesh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_had_input_Texturized_Mesh">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#Dig:_L10_had_input"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Importing_3d_Textured_Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Textured_3d_Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_collected_RawFiles -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_collected_RawFiles">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:RawDataFile"/>
+        <rdfs:comment xml:lang="en">FOPPA: has collected RawFiles links an Acquisition instance to Raw Data Files. This property describes the relationship between the acquisition action and the collected raw data (e.g., photographs in photogrammetric surveys), serving as a sub-property of CIDOC-CRM&apos;s has created.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_3D_mesh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_3D_mesh">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_3D_Mesh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_3D_Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_Eydotipe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_Eydotipe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Eidotype"/>
+        <rdfs:comment xml:lang="en">FOPPA: has created Eidotype links an Acquisition instance to the conceptual object Eidotype. This property documents the creation of an Eidotype, detailing the acquisition path, obstacles, light entry points, and reflective elements in the scene, ensuring comprehensive recording of the photogrammetric process.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP: has created Eidotype</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_densified_point_cloud -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_densified_point_cloud">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Densified_Point_Cloud"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Densified_Point_Cloud"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_final_3D_model -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_final_3D_model">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Final_3D_Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Final_3D_Model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_point_cloud -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_point_cloud">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Point_Cloud"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Point_Cloud"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_textured_3D_mesh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_created_textured_3D_mesh">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Texturized_3D_Mesh"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Textured_3d_Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_exported_modelled_3D_mesh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_exported_modelled_3D_mesh">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Modelled_3D_Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelled_3D_Mesh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_method_of_acquisition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_method_of_acquisition">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P33__used__specific_technique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Method_of_Acquisition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_shape_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_shape_type">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P2_has_type"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#BeArchaeo:_Archaeological_Finding"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_trajectory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_trajectory">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P2_has_type"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Acquisition_Trajectory"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_type_of_Acquisition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_type_of_Acquisition">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P2_has_type"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Method_of_Acquisition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Acquisition_Trajectory"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:__freehand_spiral"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_aerial"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_easel_linear"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_linear_freehand"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_mixed_unstructured"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_rotating_base_microscope"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_spiral_with_rotating_base"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_structured_mixed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_vertical_or_with_drone_or_with_a_pole"/>
+        <rdfs:comment xml:lang="en">The defined acquisition types are:
+Freehand spiral
+Linear freehand
+Aerial
+Vertical (with drone or pole)
+Spiral with rotating base
+Easel linear
+Structured mixed
+Mixed unstructured
+Rotating base microscope</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_type_of_acquisition_device -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_type_of_acquisition_device">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P2_has_type"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:AcquisitionDevice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Camera"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_LiDar"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Panoramic_Camera"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_laser_scanner_camera"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_microscope"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_movie_camera"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_type_of_scale -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_has_type_of_scale">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P2_has_type"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#BeArchaeo:_Archaeological_Finding"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_is_Subphase_of_Modelling -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_is_Subphase_of_Modelling">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P165_incorporates"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_3D_Modelling_SubPhase"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Mesh_Reconstruction_SubPhase"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Modelling_Phase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_is_a_Processing_subphase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_is_a_Processing_subphase">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P9_consists_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Processing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Point_Cloud"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Densification"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_software__for_processing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_is_composed_of_number_of_picture -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_is_composed_of_number_of_picture">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P57_has_number_of_parts"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Number_of_Picture_for_Acquisition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_matching_algorithm_for_point_cloud -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_matching_algorithm_for_point_cloud">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P15_was_influenced_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algoritm_for_matching"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Point_Cloud"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_point_cloud_numbers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_point_cloud_numbers">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P3_has_note"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Densified_Point_Cloud"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Point_Cloud"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Number_of_Points"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_processing_influenced_by_acquisition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_processing_influenced_by_acquisition">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P15_was_influenced_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Processing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_software_name -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_software_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P1_is_identified_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_software__for_processing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Software_Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_the_processing_device_is_identified -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_the_processing_device_is_identified">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P1_is_identified_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Software_Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_use_processing_software -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_use_processing_software">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P9_consists_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Processing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_software__for_processing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_used_specific_acquisition_device -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_used_specific_acquisition_device">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P16_used_specific_object"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:AcquisitionDevice"/>
+        <rdfs:comment xml:lang="en">FOPPA: used specific acquisition device links an Acquisition instance to the specific Acquisition Device employed. This property ensures precise documentation of the equipment utilized, facilitating detailed tracking and reproducibility of photogrammetric processes in archaeological projects.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_used_specific_acquisition_device</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P15_was_influenced_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P15_was_influenced_by"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P165_incorporates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P165_incorporates"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P16_used_specific_object -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P16_used_specific_object">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:AcquisitionDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P182_ends_before_or_with_the_start_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P182_ends_before_or_with_the_start_of"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P1_is_identified_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P1_is_identified_by"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P2_has_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P2_has_type"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P33__used__specific_technique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P33__used__specific_technique"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P3_has_note -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P3_has_note"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P57_has_number_of_parts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P57_has_number_of_parts"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P94_has_created"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P9_consists_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#crm:_P9_consists_of"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E1_Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E1_Entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E28_Conceptual_Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E28_Conceptual_Object">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E71_Human-Made_Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E2_Temporal_Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E2_Temporal_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E1_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E4_Period -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E4_Period">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E2_Temporal_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E59_Primitive_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E59_Primitive_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E1_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E5_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E5_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E4_Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E60_Number -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E60_Number">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E59_Primitive_Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E70_Thing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E70_Thing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E77_Persistent_Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E71_Human-Made_Thing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E71_Human-Made_Thing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E70_Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E77_Persistent_Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E77_Persistent_Item">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E1_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci_S15_Observable_Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci_S15_Observable_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E1_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_3D_Modelling_SubPhase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_3D_Modelling_SubPhase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Modelling_Phase"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E29 Design 
+Definition 
+FOPPA 3D Modelling SubPhase, a subclass of CIDOC-CRM E29 Design, differs from FOPPA Modeling Phase of which it represents a part focuses on the specific tasks involved in 3D modeling. This subphase includes detailed instruction about activities such as adjusting geometry,and refining models based on archaeological standards, and manual modification of the 3d model.
+Differences and peculiarities compared to the upper class
+This class is part of the Phase Modeling Class to which it is linked by specific properties and is placed after the semi-automatic modeling sub-phases from which it differs as it provides instructions for activities that the operator must carry out in complete autonomy.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_3DModellingSubphase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Densification_SubPhase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Densification_SubPhase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Processing_Phase"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+CIDOC-CRM:E29 Design
+Definition 
+FOPPA Densification SubPhase, as a subclass of CIDOC-CRM E29 Design, involves the planning of point cloud densification. This process enhances the detail and resolution of 3D models, following specific guidelines to ensure the accurate representation of archaeological artifacts and features.
+Differences and peculiarities compared to the upper class
+This class is a derivative of E29 Design and is part, as established by the specific properties, of FOPPA Processing Phase, representing the second processing phase. it is in a state of dependency on the Reconstruction of 3D Mesh class, being a sine qua non of it.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_DensificationSubphase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Mesh_Reconstruction_SubPhase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Mesh_Reconstruction_SubPhase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Modelling_Phase"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+CIDOC-CRM:E29 Design
+Definition 
+FOPPA Mesh Reconstruction SubPhase, a subclass of CIDOC-CRM E29 Design, entails the planning of converting densified point clouds into 3D mesh models. This phase includes selecting algorithms and techniques to ensure accurate geometric and topological representations, adhering to guidelines for detailed and reliable reconstructions of archaeological artifacts.
+Differences and peculiarities compared to the upper class
+This class is part of the Modeling phase to which it is linked by the properties referable to the scheme and is distinguished from its derivation class due to the exclusive dependency relationships with the precedence Processing Phase and Dendification SubPhase as well as with the subsequent Texturing Mesh SubPhases relating to the same phase .</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_ReconstructionSubphase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Mesh_Texturing_SubPhase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Mesh_Texturing_SubPhase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Modelling_Phase"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E29 Design 
+Definition 
+FOPPA Mesh Texturing SubPhase, a subclass of CIDOC-CRM E29 Design, involves the planning of applying textures to 3D mesh models. This phase includes selecting appropriate texturing techniques and ensuring accurate color and detail representation, adhering to guidelines for creating realistic and detailed surface textures for archaeological artifacts.
+Differences and peculiarities compared to the upper class
+This class is part of the Phase Modeling Class to which it is linked by specific properties and in a state of dependency on the previous Mesh Reconstruction SubPhase.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_MeshTexturingSubphase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Survey_Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Survey_Object">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#BeArchaeo:_Archaeological_Finding"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci_S15_Observable_Entity"/>
+        <rdfs:comment xml:lang="en">In relation with/ Alternative of 
+Archaeological Finding 
+SubClass of CIDC-CRM class
+S15 Observable Entity
+Definition 
+FOPPA Survey Object, an alternative to BeArchaeo&apos;s Archaeological Finding class, denotes any object subjected to photogrammetric surveying. It represents the target of data acquisition processes, crucial for generating detailed digital records, analyses, and reconstructions within the FOPPA model for archaeological documentation.
+Differences and peculiarities compared to the upper class
+This class has the function of a decisive element in the context of the survey as an archaeometric analysis and as a more correct representation to place the object of the survey in the context of relations with CIDOC-CRMsci</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_SurveyObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Textured_3d_Mesh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA_Textured_3d_Mesh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E73 Information Object
+Definition 
+FOPPA: Textured 3D Mesh, as a subclass of E73 Information Object, represents a 3D model enriched with texture details. It includes color and surface texture information, essential for realistic visual representation in digital formats. This class is integral in producing lifelike, detailed digital representations of objects.
+Differences and peculiarities compared to the upper class
+This information object has a composite nature which is structured by the combination of different information objects which are, in addition to the 3D model in the selected format (preferably obj) also the texture file (usually in jpeg or png format) or the texture files where there are are multiple textures and, where the format requires it, the mtl file for the relationship between texture and material (as in the case of the obj format)</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Textured3DMesh</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Acquisition_Phase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Acquisition_Phase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E29_Design_or_Procedure"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+CIDOC-CRM:E29 Design
+Definition 
+FOPPA Acquisition Phase, as a subclass of CIDOC-CRM E29 Design, represents the planning phase for acquiring data. This includes selecting appropriate acquisition techniques, devices, and methods to capture digital representations, ensuring the process aligns with predefined standards and guidelines for accurate and reliable data collection.
+Differences and peculiarities compared to the upper class
+the class is an instruction procedure for the different sub-phases to be followed to carry out the acquisition, the first phase in a state of dependence with the subsequent one (processing) in the overall context of the survey.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_AcquisitionPhase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Export_and_Archiving_Phase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Export_and_Archiving_Phase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E29_Design_or_Procedure"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E29 Design
+Definition 
+FOPPA Export and Archiving Phase, a subclass of CIDOC-CRM E29 Design, encompasses the instructions of the processes involved in the final export and archiving of digital models. This phase includes the procedures for preparing files for dissemination, ensuring proper metadata documentation, and securely storing models for long-term preservation, adhering to the guidelines specified in the FOPPA Manual.
+Differences and peculiarities compared to the upper class
+This Phase is the last of the phases that make up the FOPPA model and is distinguished from the reference class as it is in a state of dependence on the previous modeling phase class.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Export&amp;ArchivingPhase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Modelling_Phase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Modelling_Phase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E29_Design_or_Procedure"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E29 Design 
+Definition 
+FOPPA Modelling Phase, a subclass of CIDOC-CRM E29 Design, encompasses the planning of 3D model modifications. This phase involves refining, adjusting, and enhancing 3D models to ensure accurate representation, following guidelines for detailed and precise modeling of archaeological artifacts, and preparing the models for their final use.
+Differences and peculiarities compared to the upper class
+This Class represents the Modeling phase, placed in a state of dependence on the Processing Class and the subsequent Export and represents one of the Classes that mark the photogrammetric survey procedure from acquisition to export</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_ModellingPhase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Processing_Phase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Processing_Phase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E29_Design_or_Procedure"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+CIDOC-CRM:E29 Design
+Definition 
+FOPPA Processing Phase, as a subclass of CIDOC-CRM E29 Design, encompasses the planning of data processing activities. This includes tasks such as filtering, densification, and structuring of raw data to produce refined digital models, following established protocols to ensure data accuracy and usability.
+Differences and peculiarities compared to the upper class
+The class defines the instructions relating to processing, i.e. the set of procedures to be followed for the generation of the point cloud starting from photographs in the context of photogrammetry and more generally of processing starting from RAW data. It is placed in a state of dependency on the previous class Acquisition and the subsequent Modeling</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_ProcessingPhase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#BeArchaeo:_Archaeological_Finding -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#BeArchaeo:_Archaeological_Finding"/>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E13_Attribute_Assignment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E13_Attribute_Assignment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC:CRM_E7_Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E16_Measurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E16_Measurement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E13_Attribute_Assignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E29_Design_or_Procedure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E29_Design_or_Procedure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E73_Information_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E41_Appellation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E41_Appellation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E90_Symbolic_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E55_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E55_Type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E28_Conceptual_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E65_Creation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E65_Creation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC:CRM_E7_Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E73_Information_Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E73_Information_Object">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E90_Symbolic_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E90_Symbolic_Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E90_Symbolic_Object">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E28_Conceptual_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S4_Observation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S4_Observation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E13_Attribute_Assignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S5_Inference_Making -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S5_Inference_Making">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E13_Attribute_Assignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S9_Property_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S9_Property_Type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC:CRM_E7_Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC:CRM_E7_Activity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E5_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D11_Digital_Measurement_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D11_Digital_Measurement_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E16_Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D1_Digital_Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D1_Digital_Object">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E73_Information_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D2_Digitization_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D2_Digitization_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D11_Digital_Measurement_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D7_Digital_Machine_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D7_Digital_Machine_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E65_Creation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D2_Digitization_Process"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E7 Activity
+Definition 
+Acquisition refers to the process of capturing detailed photographic data of an object or structure. This involves systematically taking overlapping photographs from various angles to create a comprehensive and accurate 3D model, crucial for archaeological documentation and analysis.
+
+Differences and peculiarities compared to the upper class
+Data collection activities aimed at creating an information object in the specific field of photogrammetric acquisitions, laser scanners, LiDAR and others</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Acquisition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:AcquisitionDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:AcquisitionDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E70_Thing"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E70 Thing
+Definition 
+Small objects mean those archaeological finds of any material that have a diameter equal to or less than 1 cm. Complete objects originally of small size fall into this category, as do fragments of small objects.
+
+Differences and peculiarities compared to the upper class
+It stands out because it refers to specific objects suitable for data collection and generation of E28 and derivatives, such as laser scanners, cameras, LiDAR, Georadar and other survey instruments</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_AcquisitionDevice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E55_Type"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E55 Type
+Definition 
+FOPPA: FOPPA:DominantGeom.Type, as a subclass of CIDOC-CRM E55 Type, defines object scales based on their geometrical properties. The types include Sphere, Parallelepiped, Hemisphere, Cylinder, Plane Surface, and Irregular Shape/Landscape, each identified by a specific URI. This classification aids in categorizing and documenting object dimensions and shapes.
+Differences and peculiarities compared to the upper class
+This is a typology linked to a pre-ordained pattern of typologies that depend on the type of shape of the object and which influence the subsequent descriptive classes of the survey activities.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_DominantGeometryType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Eidotype -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Eidotype">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E28_Conceptual_Object"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E28 Conceptual Object
+Definition 
+
+
+An Acquisition Device is a tool or equipment used to capture photographic data for 3D modeling. This includes cameras, drones, and microscopes, each chosen based on the survey&apos;s requirements, ensuring flexibility and precision in documenting archaeological artifacts and structures.
+
+Differences and peculiarities compared to the upper class
+point of contact between the catalog processes, the acquisition description processes and the physical survey processes</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Eidotype</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_3D_Mesh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_3D_Mesh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D7_Digital_Machine_Event"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E65 Creation
+Sbuclass of FOPPA Model 
+Modelling 
+Definition 
+Exporting a 3D mesh involves saving the reconstructed 3D model into a compatible file format. This process ensures the model can be utilized in various applications, shared with collaborators, or archived for future reference, preserving the integrity and detail of the digital representation.
+Differences and peculiarities compared to the upper class
+It is a creation activity in a state of dependence with the mesh reconstructed according to the previous steps and which depends on the subsequent storage needs, placing it in a state of double dependence</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Densified_Point_Cloud -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Densified_Point_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D7_Digital_Machine_Event"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E65 Creation
+Subclass of FOPPA Model 
+Processing
+Definition 
+Exporting a densified point cloud involves saving the enhanced, high-resolution point cloud data in a chosen format. This process ensures that the detailed and accurate representation of the surveyed object is preserved for further analysis, visualization, or integration into 3D modeling software.
+Differences and peculiarities compared to the upper class
+This is a creation activity in a state of dependence on the point cloud information object from which the densified cloud is deduced</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Final_3D_Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Final_3D_Model">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D7_Digital_Machine_Event"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E65 Creation
+Subclass of FOPPA Model 
+Exporting
+Definition 
+Exporting the final 3D model involves saving the fully processed and textured 3D representation in a specific file format. This ensures the model is ready for its intended use, such as visualization, analysis, or presentation, and maintains compatibility with various software and platforms.
+Differences and peculiarities compared to the upper class
+It is a creation phase in a state of dependence with the entire creation process, whose purposes are constrained by the specific actions performed previously and the decisions made, and the information object it produces is a derivative of those that have it preceded. It is placed as the final point of the FOPPA Protocol</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Modelled_3D_Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Modelled_3D_Model">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D7_Digital_Machine_Event"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E65 Creation 
+Subclass of FOPPA Model 
+Exporting
+Definition 
+Exporting a modeled 3D model involves saving and converting the refined digital representation into a specific file format. This enables the model to be used in various applications, such as visualization, analysis, or 3D printing, ensuring compatibility with different software and devices.
+Differences and peculiarities compared to the upper class
+The reference class is creation but it is distinguished not only by the dependency relationships with the information objects that precede this modeled 3D model but also because it generates the first three-dimensional object resulting from intentional modification actions not entrusted to algorithms and automated computations .</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Point_Cloud -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Point_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D7_Digital_Machine_Event"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E65 Creation
+Subclass of FOPPA Model 
+Processing
+Definition 
+Exporting a point cloud involves converting 3D data, generated from photogrammetric processing, into a file format suitable for analysis or visualization. This step ensures that the spatial coordinates and details of surveyed objects are preserved, enabling further examination and integration into various software applications.
+Differences and peculiarities compared to the upper class
+This is a subcategory of Creation as it focuses specifically on the creation of relief objects in the form of point clouds and is therefore specific to certain devices (laser scanners) or procedures (photogrammetry) and therefore in a state of dependence on raw data and acquisition procedures</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Texturized_3D_Mesh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Export_Texturized_3D_Mesh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D7_Digital_Machine_Event"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E65 Creation 
+Subclass of FOPPA Model 
+Modelling
+Definition 
+Exporting a texturized 3D mesh involves saving the 3D model with applied surface textures into a file format suitable for further analysis, sharing, or visualization. This process ensures that the model retains its detailed visual characteristics, enabling accurate and realistic representations for various applications.
+Differences and peculiarities compared to the upper class
+Like the previous export actions, it involves the creation of information objects bound by previous elements, and in this case it leads to the generation of multiple information objects: 3D model and texture.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Processing_of_Textured_Mesh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Processing_of_Textured_Mesh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E7 Activity
+SubClass of FOPPA Model
+Modelling
+Definition 
+Processing a textured mesh involves applying surface details, such as colors and patterns, to a 3D mesh. This enhances the visual realism and accuracy of the digital model, allowing for detailed analysis and presentation. This step is crucial for creating high-quality, lifelike representations in digital archaeology.
+Differences and peculiarities compared to the upper class
+Texture processing is a subcategory action of the activity but not yet fully part of the Creation category, as it is a preparatory action for the actual generation of texture information objects and textured mesh</rdfs:comment>
+        <rdfs:label xml:lang="en">FP: CreationTexturedMesh</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:RawDataFile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:RawDataFile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E28_Conceptual_Object"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E28 Conceptual Object
+Definition 
+A Raw Data File contains unprocessed image data captured during photogrammetric surveys. These files preserve original color, detail, and metadata, crucial for accurate 3D model reconstruction. In archaeological contexts, they ensure comprehensive documentation of artifacts and structures, facilitating detailed analysis and interpretation.
+
+Differences and peculiarities compared to the upper class
+Raw Data files are distinguished as &quot;incomplete&quot; Conceptual Objects, in the sense that they are complete in their existence but their function is aimed at the processing which constitutes their reason for being. In photogrammetry it is the photographs that make up the survey.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_RawData</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E55_Type"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E55 Type
+Definition 
+FOPPA:TypeOfObjScale as a subclass of CIDOC-CRM E55 Type, classifies objects based on their size and scale. The categories include Small Object, Medium Object, Large Object, Open Architectural Structure, Architectural Element, Cave/Rooms/Underground Structure, and Landscape Element. Each type is associated with a specific URI for precise categorization.
+Differences and peculiarities compared to the upper class
+This is a typology linked to a pre-ordained pattern of typologies that depend on the type of scale of the object and which influence the subsequent descriptive classes of the survey activities.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_TypeOfObjectScale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_3D_Mesh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_3D_Mesh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E73 Information Object
+Definition 
+FOPPA 3D Mesh, a subclass of CIDOC-CRM E73 Information Object, represents a three-dimensional digital model composed of interconnected polygons. This mesh structure captures the surface geometry of an object, providing a foundational dataset for further processing, texturing, and analysis in archaeological and cultural heritage documentation.
+Differences and peculiarities compared to the upper class</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_3DMesh</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Acquisition_Trajectory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Acquisition_Trajectory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E55_Type"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E55 Type
+Definition 
+FOPPA: TypeOfAcquisition, as a subclass of CIDOC-CRM E55 Type, categorizes different photogrammetric acquisition methods. Each method, such as Freehand spiral or Aerial, is represented by a specific URI. This class details the techniques used to capture data, providing a structured approach to documenting acquisition methodologies. The defined acquisition types are: Freehand spiral, Linear freehand, Aerial, Vertical (with drone or pole), Spiral with rotating base, Easel linear, Structured mixed, Mixed unstructured, Rotating base microscope
+Differences and peculiarities compared to the upper class
+This is a typology linked to a pre-ordained pattern of typologies that depend on the type of shape of the object and the survey context which influence the subsequent descriptive classes of the survey activities.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_TypeOfAcquisition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Densification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Densification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Processing"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E7 Activity
+Subclass of FOPPA Model 
+Processing
+Definition 
+The method to enhance the point cloud&apos;s resolution. This process increases the number of points, providing more detailed and accurate representations of the surveyed object, crucial for creating high-quality 3D models and detailed analyses in archaeological and other applications.
+
+Differences and peculiarities compared to the upper class
+This activity follows a completely dependent from the point cloud generation processes, it is therefore an intentional choice but driven by previous conditions.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_DensificationAlgorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Mesh_Reconst. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algorithm_Mesh_Reconst.">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E7 Activity
+Subclass of FOPPA Model
+Modelling
+Definition 
+A computational method to convert point cloud data into a 3D mesh. This choice impacts the mesh&apos;s accuracy, detail, and surface quality, ensuring a faithful representation of the scanned object for further analysis and applications.
+Differences and peculiarities compared to the upper class
+This  follows a decision-making activity in a state of dependence with the type of object detected, the dominant geometric shape and the type of acquisition as well as the previous densified cloud object</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_ReconstructionAlgorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algoritm_for_matching -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Algoritm_for_matching">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:Acquisition"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E7 Activity
+SubClass of FOPPA Model
+Acquisition
+Definition 
+A method to accurately align and merge images in photogrammetry. Key criteria include the algorithm&apos;s ability to handle varied image overlaps, correct distortions, and ensure consistency. Effective algorithms enhance the precision of 3D models and the reliability of archaeological data analysis.
+Differences and peculiarities compared to the upper class
+This activity follows a semi-intentional and completely dependent on the collection indications and the intrinsic characteristics of the survey and the devices available as well as the type of survey and object acquired. It is distinguished from the processing itself, being part of it and having a greater dependence. specific with Raw Data</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_MatchingAlgorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Cylinder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Cylinder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type"/>
+        <rdfs:comment>A cylinder has two parallel circular bases connected by a curved surface. Examples include a column or a bottle.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Cylinder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Densified_Point_Cloud -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Densified_Point_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E73 Information Object
+Definition 
+FOPPA Densified Point Cloud, a subclass of CIDOC-CRM E73 Information Object, represents a high-density collection of 3D points obtained from photogrammetric or laser scanning processes. It serves as a detailed spatial dataset used for generating accurate 3D models, documenting surface details, and supporting further analytical tasks in archaeological research.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_DensifiedPointCloud</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Export_and_Archiving -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Export_and_Archiving">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC:CRM_E7_Activity"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E7 Activity 
+Definition 
+FOPPA: Export and Archiving, a subclass of CIDOC-CRM E7 Activity, involves the final stages of digital asset management. This phase encompasses exporting the processed data and archiving it for long-term preservation, ensuring the integrity and accessibility of digital records in accordance with FOPPA guidelines.
+Differences and peculiarities compared to the upper class</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Export&amp;Archiving</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Final_3D_Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Final_3D_Model">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E73 Information Object
+Definition 
+FOPPA: Final 3D Model, a subclass of CIDOC-CRM E73 Information Object, represents the ultimate version of a 3D digital model. This model is ready for its intended use, whether for 3D printing, presentations, or interactive applications, and includes all final modifications and textures.
+Differences and peculiarities compared to the upper class
+…</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Final3DModel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Hemisphere -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Hemisphere">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type"/>
+        <rdfs:comment xml:lang="en">A hemisphere is half of a sphere, typically divided by a plane passing through its center. Examples include a crater or a bowl.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Hemisphere</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Importing_3d_Textured_Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Importing_3d_Textured_Model">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E7 Activity 
+Sbuclass of FOPPA Model
+Modelling
+Definition 
+Importing a 3D textured model involves loading a previously exported 3D model with surface textures into software for further analysis, visualization, or modification. This step ensures the model&apos;s detailed visual and structural characteristics are preserved for accurate and realistic representations in various applications.
+Differences and peculiarities compared to the upper class
+Importation is a binding and verification activity. ON the one hand it can be directed exclusively towards a 3D model produced according to the procedure and on the other hand it subjects the 3D model to a specific operational pipeline</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Import3DTexturedModel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Landscape_element -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Landscape_element">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+        <rdfs:comment>Landscape elements such as plains, woods, clearings, cliffs and any landscape element derived from the action of nature and anthropic action but which cannot be traversed within it. A rock structure does not fall into this category, but rather the facade is an architectural structure (D) and its interior is a walkable volume (F). Dynamic or transforming landscape elements such as landslides, sinkholes, and sink holes also fall into this category. Elements of the landscape modified by human action but not visitable fall into this category. (So ​​Mount Rashmure does NOT fall into this category, the Behistun carvings do fall into this category).</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Landscape</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Mesh_Formation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Mesh_Formation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S5_Inference_Making"/>
+        <rdfs:comment xml:lang="en">In relation with/ Alternative of 
+FOPPA:Choosing Algorithm Mesh Reconst AND FOPPA:Export 3D Mesh
+SubClass of CIDC-CRM class
+S5 Inference Making
+Definition 
+FOPPA: Mesh Formation, as a subclass of S5 Inference Making in CIDOC-CRMsci, refers to the process of creating a 3D mesh model from data. This involves inferring and assembling geometric data to generate a structured digital representation, facilitating detailed analysis and visualization of objects.
+Differences and peculiarities compared to the upper class
+In the context of the use of photogrammetry as an archaeometric tool of measurement and analysis, this class describes the interpretative and rational act of includes evaluations, calculations, and interpretations based on mathematical formulations and propositions characteristic of the class from which it derives. This definition focuses on the decision-making role performed when the construction processes of the 3D model Mesh are started starting from the point cloud.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_MeshFormation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelled_3D_Mesh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelled_3D_Mesh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D1_Digital_Object"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E73 Information Object
+Definition 
+FOPPA Modelled 3D Mesh, a subclass of CIDOC-CRM E73 Information Object, represents a three-dimensional digital model that has been modified or refined from its initial mesh form. This includes detailed adjustments and enhancements, capturing the precise geometry and texture of the object for advanced analysis and documentation.
+Differences and peculiarities compared to the upper class
+…</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Modelled3DMesh</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D2_Digitization_Process"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E7 Activity 
+Definition 
+Modeling a 3D model involves creating and refining a digital representation of an object using specialized software. This process includes shaping the geometry, and adding details to achieve an accurate and detailed virtual model, ready for analysis, visualization, or further processing.
+Differences and peculiarities compared to the upper class
+This is an activity confined to modeling, not to be confused with the Modeling instructions which already include the construction of the mesh, and which however are continuous with it. The modeling is driven by design and research considerations and has no aesthetic character, distinguishing itself from 3D design modeling, which is not the subject of this analysis.</rdfs:comment>
+        <rdfs:label>FP:_Modelling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling_Software -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling_Software">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Modelling"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E7 Activity
+Subclass of FOPPA Model
+Modelling
+Definition 
+A suitable program to create, modify, and refine 3D models. The choice depends on specific project needs, software capabilities, and compatibility with other tools used in the workflow, ensuring efficient and effective modeling processes.
+Differences and peculiarities compared to the upper class
+It follows a decision-making activity in a state of dependence with all the processes that preceded it, both in relation to the information object and to the other activities that have taken place.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_ModellingSoftware</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Occupied_Volume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Occupied_Volume">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S9_Property_Type"/>
+        <rdfs:comment xml:lang="en">In relation with/ Alternative of 
+FOPPA Textured 3d Mesh
+SubClass of CIDC-CRM class
+S9 Property Type
+Definition 
+FOPPA: Occupied Volume, as a subclass of S9 Property Type in CIDOC-CRMsci, denotes the spatial extent or volume occupied by a 3D model. It describes the three-dimensional space that the model fills, essential for understanding the physical dimensions and spatial relationships of the object represented.
+Differences and peculiarities compared to the upper class
+From a photogrammetric point of view, the volume is among the intrinsic properties of the object and is among the values ​​specifically measured by the survey (photogrammetric and laser scanner). It is distinguished from the dominant class as a class derived from the nature of the processing processes and linked to the classes of the mesh.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_OccupiedVolume</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Open_architectural_structure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Open_architectural_structure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+        <rdfs:comment xml:lang="en">Architectural structures that can be visited or potentially visited, understood in their overall external structure and not in their internal volumes. Courtyards and parade grounds fall into this category as they are external volumes.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_OpenArchitecturalStructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Parallelepiped -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Parallelepiped">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type"/>
+        <rdfs:comment xml:lang="en">A parallelepiped is a six-faced figure (also called a polyhedron) where each face is a parallelogram. Examples include a book or a ceramic shard.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Parallelepiped</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Photo_Survey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Photo_Survey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S4_Observation"/>
+        <rdfs:comment xml:lang="en">In relation with/ Alternative of 
+FOPPA:Acquisition
+SubClass of CIDC-CRM class
+S4 Observation
+Definition 
+FOPPA: Photo Survey, as a subclass of S4 Observation in CIDOC-CRMsci, involves capturing photographic images for detailed documentation and analysis. It focuses on recording visual information of objects or sites to support archaeological and architectural studies by providing precise visual records and observations.
+Differences and peculiarities compared to the upper class
+The photographs acquired cover in the context of the photogrammetric survey with archaeometric analysis not only the basis of the survey carried out but also the first tool for knowledge and analysis of the detected object, thus creating a natural state under the observation class but also in a state of relationship binding with the other classes relating to the processing of the 3D model</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_PhotoSurvey</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Plane_Surface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Plane_Surface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type"/>
+        <rdfs:comment xml:lang="en">A plane surface is a flat, two-dimensional surface extending infinitely in all directions. Examples include a flat stone tablet or a pavement segment.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_PlaneSurface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Point_Cloud -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Point_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D1_Digital_Object"/>
+        <rdfs:comment>SubClass of CIDC-CRM class
+E73 Information Object
+SubClass of FOPPA Model
+Processing
+Definition 
+Point Cloud, as a subclass of CIDOC CRM&apos;s E73 Information Object, represents a dense collection of 3D data points captured from the surface of an object. It serves as a foundational dataset for further processing and modeling in photogrammetric documentation and digital reconstruction of archaeological artifacts.
+Differences and peculiarities compared to the upper class
+The Point Cloud differs from a typical Information Object due to the specific dependence relationship on the Raw Data of the acquisition and the role it plays as the foundation of the subsequent mesh and then 3D model. It also represents the unfalsified archaeometric analysis of the knowledge of the surface of the discovered find</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_PointCloud</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Processing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Processing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CRMdig:_D2_Digitization_Process"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E7 Activity
+Definition 
+
+
+Processing in photogrammetry involves transforming raw data files into usable outputs. This includes validating image quality, stitching photographs, generating 3D models, and correcting errors like texture and polygon mismatches. It ensures data consistency, enhances detail accuracy, and prepares the images for further modeling and analysis in archaeological contexts.
+
+Differences and peculiarities compared to the upper class
+This specific action is in a state of dependence on the RawDataFile and on the Acquisition action and although intentional and therefore Activity depends on the choices made in the previous classes.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Processing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Sphere -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Sphere">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type"/>
+        <rdfs:comment xml:lang="en">A sphere is a perfectly round geometrical object in three-dimensional space, like a ball. Examples include a basketball or a glass bead.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Sphere</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Surface_Sampling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Surface_Sampling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRMsci:_S9_Property_Type"/>
+        <rdfs:comment xml:lang="en">In relation with/ Alternative of 
+FOPPA: Dominant Geometry 
+SubClass of CIDC-CRM class
+S9 Property Type
+Definition 
+FOPPA: Surface Sampling, as a subclass of S9 Property Type in CIDOC-CRMsci, refers to the process of analyzing and recording surface characteristics of objects. This involves collecting data on surface features for detailed examination and documentation, aiding in accurate representation and analysis in archaeological and architectural contexts.
+Differences and peculiarities compared to the upper class
+The class refers specifically to the representation of the surface type of the acquired object understood as a property of the object itself</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_SurfaceSampling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:__freehand_spiral -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:__freehand_spiral">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">The Spiral Acquisition method in the F.O.P.P.A. protocol systematically captures detailed information by focusing on an object&apos;s center, starting with perpendicular shots, then 45° and 75° inclinations. It effectively documents finds from multiple perspectives, emphasizing intricate details and adapting to cavities or corridor-like structures. Further information in the FOPPA Manual</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_freehandSpiral</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_aerial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_aerial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">The Aerial Acquisition technique in the F.O.P.P.A. protocol involves moving parallel to the ground with a downward-tilted camera, ideal for drones. It effectively documents archaeological trenches and extensive territories, providing comprehensive, elevated images for detailed data collection and insights into spatial layout and features.  Further information in the FOPPA Manual</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_aerial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_easel_linear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_easel_linear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">Acquisition with a camera fixed on a tripod involves moving the camera laterally at equidistant points, perpendicular to the object. It&apos;s useful for analyzing walls with small, colorimetrically distinct features. Each photo must overlap at least 70% with the preceding one, requiring numerous acquisitions. Further information in the FOPPA Manual</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_easelLinear</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_linear_freehand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_linear_freehand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">The Straight Line Acquisition method in the F.O.P.P.A. protocol surveys large buildings by moving the camera parallel to the structure while keeping it perpendicular. It ensures comprehensive coverage and captures intricate details. Maintaining at least 70% overlap between photos is crucial for accurate 3D model reconstruction and minimizing missed details. Further information in the FOPPA Manual</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_linearFreehand</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_mixed_unstructured -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_mixed_unstructured">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">Unstructured mixed acquisition is used for irregular environments where standard modules don&apos;t apply. It requires photos to share at least 80% of representation, maintaining camera orientation. This method is necessary for areas like deep tunnels and involves taking numerous photographs to ensure detailed coverage. Further information in the FOPPA Manual</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_MixedUnstructured</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_rotating_base_microscope -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_rotating_base_microscope">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">Rotating base acquisitions with a microscope camera are tailored for objects smaller than 2cm. Specific measures address challenges like orthographic lens effects and precise acquisition point management. Appendix #2 of the FOPPA Protocol extensively covers these methods for acquiring tiny objects.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_RotatingBaseMicroscope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_software__for_processing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_software__for_processing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Processing"/>
+        <rdfs:comment xml:lang="en">SubClass of CIDC-CRM class
+E7 Activity
+SubClass of FOPPA Model
+Processing
+Definition 
+Appropriate tools to handle photogrammetric data transformation. Key factors include compatibility with raw data, algorithm efficiency, error correction capabilities, and flexibility. The chosen software must support validation, image stitching, and 3D modeling to ensure accurate, detailed outputs for archaeological analysis.
+
+Differences and peculiarities compared to the upper class
+This activity follows a semi-intentional and completely dependent on the collection indications and the intrinsic characteristics of the survey and the devices available as well as the type of survey and object acquired</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_ProcessingSoftware</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_spiral_with_rotating_base -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_spiral_with_rotating_base">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">The rotating base survey in the F.O.P.P.A. protocol involves rotating the object on a neutral-colored base with four camera positions (0°, 15°, 45°, 75°). The base rotates 5-15° between photos, ensuring detailed capture. Reflective objects require an absorbent background like velvet. Further information in the FOPPA Manual</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_SpiralRotatingBase</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_structured_mixed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_structured_mixed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">Structured mixed acquisition combines linear, spiral, and vertical surveys, adhering to the parameters of each method. While generally avoided for large structures, it&apos;s effective for irregular small objects and body parts. Specific guidelines for human body part surveys are detailed in Appendix #1 of the FOPPA Manual.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_StructuredMixed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_vertical_or_with_drone_or_with_a_pole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_vertical_or_with_drone_or_with_a_pole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type"/>
+        <rdfs:comment xml:lang="en">Vertical capture in the F.O.P.P.A. protocol involves systematic image acquisition along a vertical plane, ideal for tall structures. Drones or cameras on poles are recommended for flexibility and efficiency, ensuring comprehensive documentation of elevations like architectural elements and monuments. Further information in the FOPPA Manual</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Vertical&amp;Drone&amp;Pole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Architectural_element_(part_of_an_architectural_structure) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Architectural_element_(part_of_an_architectural_structure)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+        <rdfs:comment xml:lang="en">All those elements that are part of an architectural structure (D) both structurally (such as pillars and bastions) and as parts of an external structure (windows, portals and doors).
+Architectural elements may still be in place or may have been removed from the main structure or may never have been part of it.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_ArchitecturalElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Cave,_rooms,_or_underground_structure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Cave,_rooms,_or_underground_structure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+        <rdfs:comment xml:lang="en">Caves, rooms and underground environments. Any finished practicable volume, including the environments that make up architectural structures</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Cave</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Irregular_shape/Landscape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Irregular_shape/Landscape">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:DominantGeom.Type"/>
+        <rdfs:comment>An irregular shape does not fit neatly into standard geometric categories and has uneven or asymmetrical surfaces. Examples include an irregular animal remains like Lyuba&apos;s mummy or a piece of pottery with an unusual form.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_IrregularShape&amp;Landscape</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Large_Object_(from_30_cm_upwards) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Large_Object_(from_30_cm_upwards)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+        <rdfs:comment xml:lang="en">Objects whose diameter is equal to or greater than 30 cm. The objects can be removable or immovable, of any material but they must have the characteristic of not being able to access the inside, therefore they cannot be visited. The Statue of Liberty does not fall into this category.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_LargeObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Medium_Object_(1_cm_to_30_cm) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Medium_Object_(1_cm_to_30_cm)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+        <rdfs:comment xml:lang="en">Objects whose diameter is between 1 cm and 30 cm, even partial parts of a larger overall object. In the case of extremely irregular objects, consider the maximum extension diameter.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_MediumObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Small_object_(equal_to_or_smaller_than_1_cm) -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Small_object_(equal_to_or_smaller_than_1_cm)">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:TypeOfObjScale"/>
+        <rdfs:comment xml:lang="en">Small objects mean those archaeological finds of any material that have a diameter equal to or less than 1 cm. Complete objects originally of small size fall into this category, as do fragments of small objects.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_SmallObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Device_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Device_Type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E55_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Trajectory_Type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA:_Acquisition_Trajectory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Device_Type"/>
+        <rdfs:comment xml:lang="en">FOPPA: Camera, as a subclass of FOPPA: Acquisition Device, refers to a device used for capturing images during the acquisition phase of photogrammetric surveys. This class includes digital cameras, DSLR cameras, and other photographic equipment specifically employed to generate photogrammetric data for 3D modeling.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Camera</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_LiDar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_LiDar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Device_Type"/>
+        <rdfs:comment xml:lang="en">FOPPA: LiDAR is a subclass of FOPPA: Acquisition Device that utilizes Light Detection and Ranging technology to create detailed 3D maps and models. It emits laser pulses to measure distances to objects, providing accurate data for the digital documentation and analysis of archaeological sites and artifacts.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP: Lidar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Method_of_Acquisition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Method_of_Acquisition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FOPPA__Acquisition_Phase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Number_of_Picture_for_Acquisition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Number_of_Picture_for_Acquisition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E60_Number"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Number_of_Points -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Number_of_Points">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E59_Primitive_Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Panoramic_Camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Panoramic_Camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Device_Type"/>
+        <rdfs:comment xml:lang="en">FOPPA: Panoramic Camera is a subclass of FOPPA: Acquisition Device designed for capturing wide-angle or 360-degree images. It is utilized in the photogrammetric process to comprehensively document the environment and large objects, enabling detailed and accurate 3D reconstructions within the FOPPA model.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_Panoramic Camera</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Device -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Device">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM_E70_Thing"/>
+        <rdfs:comment xml:lang="en">FOPPA: Processing Device is a subclass of CIDOC-CRM: E70 Thing used in the digital processing of archaeological data. These devices, including computers and specialized hardware, execute the processing phases of photogrammetric workflows, transforming raw data into structured, analyzable digital models and information objects.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP: Processing Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Device_Appellation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Device_Appellation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E41_Appellation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Software_Name -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Processing_Software_Name">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#CIDOC-CRM:_E41_Appellation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_laser_scanner_camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_laser_scanner_camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Device_Type"/>
+        <rdfs:comment xml:lang="en">FOPPA: Laser Scanner Camera is a subclass of FOPPA: Acquisition Device used for capturing high-resolution 3D data of objects and environments. It employs laser scanning technology to produce accurate point clouds, aiding in the precise reconstruction and analysis of archaeological artifacts and sites within the FOPPA framework.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP: laser scanner camera</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_microscope -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_microscope">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Device_Type"/>
+        <rdfs:comment xml:lang="en">FOPPA: Microscope is a subclass of FOPPA: Acquisition Device utilized for capturing highly detailed images of small-scale objects. In the FOPPA framework, it is employed for photogrammetric acquisition at a microscopic level, facilitating the creation of precise 3D models of minute archaeological artifacts and surface details.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP: microscope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_movie_camera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_movie_camera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/francescagarbarini/ontologies/2024/6/FOPPA_4_2#FP:_Acquisition_Device_Type"/>
+        <rdfs:comment xml:lang="en">FOPPA: Movie Camera is a subclass of FOPPA: Acquisition Device used for recording motion pictures. In the photogrammetric process, it captures sequences of images over time, enabling the creation of dynamic 3D models and detailed visual documentation of archaeological sites and cultural heritage objects within the FOPPA framework.</rdfs:comment>
+        <rdfs:label xml:lang="en">FP:_movie camera</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
